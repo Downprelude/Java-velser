@@ -1,0 +1,31 @@
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+article {
+  margin: 5%;
+  margin-top: 0%;
+  border: black;
+  border-style: solid;
+}
+
+h2 {
+  padding-left: 2.5%;
+}
+
+p {
+  margin: 5%;
+}
+
+h1 {
+  text-align: center;
+  border: black;
+  border-style: ;
+}
+
+footer h3 {
+  text-align: center;
+  border: black;
+  border-style: solid;
+}
