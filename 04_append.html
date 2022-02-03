@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="struktur.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Titel</h1>
+    </header>
+
+    <main>
+      <h2>undertitel</h2>
+      <section>
+        <article>
+          <img src="https://placeimg.com/640/480/any" alt />
+          <h3>Article 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, sint
+            beatae quidem pariatur odio iusto illum eos exercitationem,
+            voluptas, facere cupiditate! Earum culpa magni reprehenderit dicta
+            ullam odit animi exercitationem.
+          </p>
+        </article>
+
+        <article>
+          <img src="https://placeimg.com/640/480/any" />
+          <h3>Article 2</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+            vitae totam facere voluptatem ipsum eligendi nostrum odio laborum
+            beatae quidem excepturi consequuntur, quisquam, sapiente ipsam
+            impedit debitis quaerat eum iste.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <h3>This is the footer</h3>
+    </footer>
+
+    <script>
+      /* Øvelse 4 - Tilføj nyt element
+      1. opretter et nyt article-element med( createElement).
+      2. tilføjer et billede, en overskrift og noget tekst til den nye article.
+      3. Indsætter det nye element efter de eksisterende article elementer (appendChild )
+      */
+
+      const titel = document.querySelector("header");
+      console.log(titel);
+
+      const rubrik = document.querySelector("h1");
+      console.log(rubrik);
+      rubrik.textContent = "Denne overskrift er ændret i JavaScript";
+
+      const main = document.querySelector("main");
+      console.log(main);
+
+      const underrubrik = document.querySelector("h2");
+      console.log(underrubrik);
+
+      const sektion = document.querySelector("section");
+      console.log(sektion);
+
+      const artikel1 = document.querySelector("article:nth-child(1) p");
+      console.log(artikel1);
+      artikel1.textContent =
+        "Her har jeg ændret min paragraf, til noget andet end Lorem i JavaScript";
+
+      const overskrift_artikel1 = document.querySelector(
+        "article:nth-child(1) h3"
+      );
+      console.log(overskrift_artikel1);
+      overskrift_artikel1.textContent = "Ændret overskrift";
+
+      const artikel2 = document.querySelector("article:nth-child(2) p");
+      console.log(artikel2);
+      artikel2.textContent =
+        "Endnu engan har jeg her ændret min paragraf i Java, ved at kalde min variabel for artikel2";
+
+      const overskrift_artikel2 = document.querySelector(
+        "article:nth-child(2) h3"
+      );
+      console.log(overskrift_artikel2);
+      overskrift_artikel2.textContent =
+        "Her har jeg også ændret min overskrift";
+
+      const billede1 = document.querySelector("article:nth-child(1) img");
+      console.log(billede1);
+      billede1.src = "udskift.jpg";
+      billede1.alt = "Billede udskiftet i JavaScript";
+
+      const billede2 = document.querySelector("article:nth-child(2) img");
+      console.log(billede2);
+      billede2.src = "udskift2.jpg";
+      billede2.alt = "iegn er dette billede udskiftet i JavaScript";
+
+      /* her tager jeg fat i min section, da min nye artikkel skal ligge inde i denne */
+      let mainSection = document.querySelector("section");
+
+      /* Først opretter jeg min nye artikel. jeg fortæller hvad jeg vil opreette, 
+altså en "article", hvorefter jeg giver den et variabelnavn altså "newArticle". Jeg benytter let,
+da jeg nu tilføjer indhold*. Jeg bruger createElement, da jeg tilføjer et helt nyt element.*/
+      let newArticle = document.createElement("article");
+
+      /*      her laver jeg en overskrift */
+      let overskrift = document.createElement("h3");
+
+      /* Her laver jeg noget tekst til overskriften.  */
+      let overskriftText = document.createTextNode("Article 3");
+
+      /* her tilføjer jeg jeg teksten til overskrifteb. */
+      overskrift.appendChild(overskriftText);
+
+      /* her tilføjer jeg overskriften til min nye artikkel  */
+      newArticle.appendChild(overskrift);
+
+      /* Nu tilføjer jeg "et barn" til min section. Dette "barn" er min nye atikel, altså newArtikel */
+      mainSection.appendChild(newArticle);
+
+      const mellemrubrik = document.querySelector("h3");
+      console.log(mellemrubrik);
+
+      const brødtekst = document.querySelector("p");
+      console.log(brødtekst);
+
+      const footer = document.querySelector("footer");
+      console.log(footer);
+    </script>
+  </body>
+</html>
